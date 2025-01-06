@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc/cubit/user_list_cubit.dart';
-import 'package:learn_bloc/cubit/user_list_state.dart';
+import 'package:learn_bloc/cubit/user_cubit/user_list_cubit.dart';
+import 'package:learn_bloc/cubit/user_cubit/user_list_state.dart';
 import 'package:learn_bloc/widgets/user_card.dart';
 
 class UserView extends StatefulWidget {

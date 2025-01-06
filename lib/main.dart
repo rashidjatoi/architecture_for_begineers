@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc/cubit/user_list_cubit.dart';
+import 'package:learn_bloc/cubit/user_cubit/user_list_cubit.dart';
 
-import 'ui/user_view.dart';
+import 'cubit/counter_cubit/counter_cubit.dart';
+import 'ui/home_view.dart';
 
 void main() {
-  runApp(MultiBlocProvider(providers: [
-    BlocProvider(
-      create: (create) => UserListCubit()..fetchUsers(),
-    ),
-  ], child: const MyApp()));
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,13 +16,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (create) => UserListCubit()..fetchUsers(),
+        ),
+        BlocProvider(create: (context) => CounterCubit())
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.deepPurple,
+          ),
+          useMaterial3: true,
+        ),
+        home: const HomeView(),
       ),
-      home: const UserView(),
     );
   }
 }

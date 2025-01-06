@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 
 // Import the User model and state classes.
-import '../models/user_model.dart';
+import '../../models/user_model.dart';
 import 'user_list_state.dart';
 
 // Define the UserListCubit class that extends Cubit to manage UserListState.

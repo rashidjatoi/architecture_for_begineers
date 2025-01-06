@@ -11,15 +11,17 @@ class UserListState {
 
   // Constructor to initialize the UserListState with required properties.
   // `users` must be provided, and `isLoading` defaults to false if not specified.
-  const UserListState({required this.users, this.isLoading = false});
+  const UserListState({required this.users, required this.isLoading});
 
   // Factory constructor to create an empty state with no users and default `isLoading` value.
-  factory UserListState.empty() => UserListState(users: []);
+  factory UserListState.empty() => UserListState(users: [], isLoading: false);
 
   // Method to create a new UserListState based on the current state,
   // allowing updates to `users` and/or `isLoading` while keeping other properties unchanged.
   UserListState copyWith({List<User>? users, bool? isLoading}) => UserListState(
-        users: users ?? this.users, // Use the provided `users` list or retain the current one.
-        isLoading: isLoading ?? this.isLoading, // Use the provided `isLoading` value or retain the current one.
+        users: users ??
+            this.users, // Use the provided `users` list or retain the current one.
+        isLoading: isLoading ??
+            this.isLoading, // Use the provided `isLoading` value or retain the current one.
       );
 }
