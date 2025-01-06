@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:learn_bloc/ui/counter/counter_view.dart';
 import 'package:learn_bloc/ui/user/user_view.dart';
 
+import 'todo/todo_view.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -41,6 +43,21 @@ class HomeView extends StatelessWidget {
                 );
               },
               child: Text('User Api Example'),
+            ),
+
+            // SizedBox
+            SizedBox(height: 10),
+
+            // Users Api Example
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => TodoView(),
+                  ),
+                );
+              },
+              child: Text('Todo Example'),
             ),
           ],
         ),

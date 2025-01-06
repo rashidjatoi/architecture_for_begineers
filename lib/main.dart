@@ -7,6 +7,7 @@ import 'data/repository/user_implimentation.dart';
 import 'domain/repositories/user_repository.dart';
 import 'ui/counter/counter_cubit/counter_cubit.dart';
 import 'ui/home_view.dart';
+import 'ui/todo/cubit/todo_cubit.dart';
 
 final getIt = GetIt.asNewInstance();
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (create) => UserListCubit(getIt())..fetchUsers(),
         ),
-        BlocProvider(create: (context) => CounterCubit())
+        BlocProvider(create: (context) => CounterCubit()),
+        BlocProvider(create: (create) => TodoCubit())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
