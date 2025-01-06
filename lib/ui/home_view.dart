@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learn_bloc/ui/counter_view.dart';
-import 'package:learn_bloc/ui/user_view.dart';
+import 'package:learn_bloc/ui/counter/counter_view.dart';
+import 'package:learn_bloc/ui/user/user_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
