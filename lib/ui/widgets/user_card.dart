@@ -4,7 +4,8 @@ import '../../domain/entity/user.dart';
 
 class UserCard extends StatelessWidget {
   final UserEntity user;
-  const UserCard({super.key, required this.user});
+  final void Function()? onTap;
+  const UserCard({super.key, required this.user, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,7 @@ class UserCard extends StatelessWidget {
         title: Text(user.name),
         subtitle: Text(user.email),
         trailing: Icon(Icons.arrow_forward),
+        onTap: onTap,
       ),
     );
   }

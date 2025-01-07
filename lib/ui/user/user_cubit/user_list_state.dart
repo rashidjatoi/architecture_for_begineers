@@ -9,7 +9,7 @@ class UserListState {
   const UserListState(
       {required this.users, required this.isLoading, this.error});
 
-  factory UserListState.empty() => UserListState(users: [], isLoading: false);
+  factory UserListState.initial() => UserListState(users: [], isLoading: false);
 
   UserListState copyWith(
           {List<UserEntity>? users, bool? isLoading, String? error}) =>
