@@ -11,9 +11,15 @@ class UserListCubit extends Cubit<UserListState> {
 
   Future<void> fetchUsers() async {
     try {
-      emit(state.copyWith(isLoading: true));
-      final user = await userRepository.getAllUser();
+      emit(state.copyWith(isLoading: true, error:  null));
+      final userResponse = await userRepository.getAllUser();
+      userResponse.fold((error) {
+      emit(state.copyWith(error: error.error, isLoading: false));
+
+      }, (user) {
+
       emit(state.copyWith(users: user, isLoading: false));
+      });
     } catch (e) {
       log(e.toString());
 
