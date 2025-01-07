@@ -1,7 +1,7 @@
 abstract class TodoEvent {}
 
 class AddTodo extends TodoEvent {
-  final String todo;
+  final String todo ;
 
   AddTodo(this.todo);
 }
