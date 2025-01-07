@@ -6,8 +6,11 @@ import 'package:learn_bloc/ui/user_details/user_details_initial_params.dart';
 import 'package:learn_bloc/ui/user_details/user_details_view.dart';
 import 'package:learn_bloc/ui/widgets/user_card.dart';
 
+import 'user_list_initial_params.dart';
+
 class UserView extends StatefulWidget {
-  const UserView({super.key});
+  final UserListInitialParams userListInitialParams;
+  const UserView({super.key, required this.userListInitialParams});
 
   @override
   State<UserView> createState() => _UserViewState();

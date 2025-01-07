@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_bloc/ui/counter/counter_view.dart';
+import 'package:learn_bloc/ui/user/user_list_initial_params.dart';
 import 'package:learn_bloc/ui/user/user_view.dart';
 
 import 'todo/todo_view.dart';
@@ -38,7 +39,9 @@ class HomeView extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => UserView(),
+                    builder: (context) => UserView(
+                      userListInitialParams: UserListInitialParams(),
+                    ),
                   ),
                 );
               },
